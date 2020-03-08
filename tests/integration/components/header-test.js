@@ -9,6 +9,6 @@ module('Integration | Component | header', function(hooks) {
   test('it renders three links', async function(assert) {
     await render(hbs`<Header />`);
 
-    assert.dom('a').exists({ count: 3 });
+    assert.dom('a').exists({ count: 4 });
   });
 });

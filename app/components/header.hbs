@@ -1,17 +1,22 @@
 <nav class="nav-bar">
   <ul>
-    <li>
-      <LinkTo @route="artists" class="nav-artists">
+    <li class="nav-index">
+      <LinkTo @route="index">
+        Ember Discography
+      </LinkTo>
+    </li>
+    <li class="nav-artists">
+      <LinkTo @route="artists">
         Artists
       </LinkTo>
     </li>
-    <li>
-      <LinkTo @route="albums" class="nav-albums">
+    <li class="nav-albums">
+      <LinkTo @route="albums">
         Albums
       </LinkTo>
     </li>
-    <li>
-      <LinkTo @route="songs" class="nav-songs">
+    <li class="nav-songs">
+      <LinkTo @route="songs">
         Songs
       </LinkTo>
     </li>
