@@ -5,7 +5,7 @@ import { get } from '@ember/object';
 module('Unit | Model | album', function(hooks) {
   setupTest(hooks);
 
-  test('it has relationship with artist', function(assert) {
+  test('album should have relationship with artist', function(assert) {
     const Album = this.owner.lookup('service:store').modelFor('album');
     const relationship = get(Album, 'relationshipsByName').get('artist');
 
@@ -17,7 +17,7 @@ module('Unit | Model | album', function(hooks) {
     );
   });
 
-  test('it has relationship with songs', function(assert) {
+  test('album should have relationship with songs', function(assert) {
     const Album = this.owner.lookup('service:store').modelFor('album');
     const relationship = get(Album, 'relationshipsByName').get('songs');
 
