@@ -1,7 +1,5 @@
 export default function() {
 
-  // These comments are here to help you get started. Feel free to delete them.
-
   /*
     Config (with defaults).
 
@@ -12,15 +10,15 @@ export default function() {
   // this.namespace = '';    // make this `/api`, for example, if your API is namespaced
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
-  /*
-    Shorthand cheatsheet:
+    
+    this.get('/artists');
+    this.get('/artists/:id');
+    this.get('/albums');
+    this.get('/albums/:id');
+    this.get('/songs');
+    this.post('/songs/new');
+    this.put('/songs/:id');
+    this.del('/songs/:id');
+    this.del('/albums/:id');
 
-    this.get('/posts');
-    this.post('/posts');
-    this.get('/posts/:id');
-    this.put('/posts/:id'); // or this.patch
-    this.del('/posts/:id');
-
-    https://www.ember-cli-mirage.com/docs/route-handlers/shorthands
-  */
 }
