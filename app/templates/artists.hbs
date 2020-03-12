@@ -1,10 +1,13 @@
 <div class="artists-container">
   {{#each @model as |artist|}}
-    <h4>{{artist.name}}</h4>
+    {{!-- {{debugger}} --}}
+    <Artist @artist={{artist}} />
+
+    {{!-- <h4>{{artist.name}}</h4>
     <img src={{artist.image}} alt={{artist.name}}/>
       {{#each artist.albums as |album|}}
         <h4>{{album.title}} {{album.releaseDate}}</h4>
-      {{/each}}
+      {{/each}} --}}
   {{/each}}
   {{outlet}}
 </div>

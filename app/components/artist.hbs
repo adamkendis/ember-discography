@@ -1,0 +1,21 @@
+<div class="artist">
+  <div class="image">
+    <img src={{@artist.image}} alt={{@artist.name}} />
+  </div>
+  <div class="artist-name">
+    <h1>{{@artist.name}}</h1>
+  </div>
+  <div class="albums-count" {{on "click" this.toggleHidden}}>
+    <span>Albums saved: {{@artist.albums.length}}</span>
+    <span class="dropdown-icon">{{if this.isHidden "▼" "▲"}}</span>
+
+  </div>
+  <div class="albums {{if this.isHidden "hidden"}}">
+    {{#each @artist.albums as |album|}}
+      <div class="album">
+        <span><b>Album title: </b>{{album.title}}</span><br/>
+        <span><b>Release date: </b>{{album.releaseDate}}</span>
+      </div>
+    {{/each}}
+  </div>
+</div>
