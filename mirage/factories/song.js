@@ -12,4 +12,5 @@ export default Factory.extend({
     return faker.random.number({min: 60, max: 420})
   },
   album: association(),
+  artist: association()
 });

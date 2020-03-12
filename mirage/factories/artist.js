@@ -11,7 +11,16 @@ export default Factory.extend({
 
   withAlbums: trait({
     afterCreate(artist, server) {
-      server.createList('album', faker.random.number({min: 1, max: 4}), { artist });
+      server.createList(
+        'album', 
+        faker.random.number({min: 1, max: 4}), 
+        { artist }).forEach(album => {
+          server.createList(
+            'song',
+            faker.random.number({min: 1, max: 15}),
+            { artist, album }
+          );
+        });
     }
   }),
 });
