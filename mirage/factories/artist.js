@@ -9,7 +9,22 @@ export default Factory.extend({
     return faker.image.avatar();
   },
 
-  withAlbums: trait({
+  withTwoAlbums: trait({
+    afterCreate(artist, server) {
+      server.createList(
+        'album', 
+        2, 
+        { artist }).forEach(album => {
+          server.createList(
+            'song',
+            faker.random.number({min: 1, max: 15}),
+            { artist, album }
+          );
+        });
+    }
+  }),
+
+  withRandomAlbums: trait({
     afterCreate(artist, server) {
       server.createList(
         'album', 
