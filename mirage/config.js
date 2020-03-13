@@ -11,15 +11,7 @@ export default function() {
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
     
-    this.get('/artists');
-    this.get('/artists/:id');
-    this.get('/albums');
-    this.get('/albums/:id');
-    this.get('/songs');
-    this.post('/songs/');
-    this.put('/songs/:id');
-    this.del('/songs/:id');
-    this.del('/albums/:id');
-    this.get('/new');
-
+    this.resource('artists');
+    this.resource('albums');
+    this.resource('songs'); 
 }
