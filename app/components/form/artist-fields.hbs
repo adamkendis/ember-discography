@@ -1,0 +1,20 @@
+<fieldset>
+  <legend>Artist:</legend>
+  <label>Name:</label>
+  <select class="select-artist" {{on "change" @handleChange}}>
+    <option value="" disabled selected>Select artist</option>
+    <option value="new">New Artist</option>
+    {{#each @artists as |artist|}}
+      <option value={{artist.id}}>{{artist.name}}</option>
+    {{/each}}
+  </select>
+  {{#if (eq @props.id "new")}}
+    <div class="new-artist-input">
+      <label for="new-artist-name">New artist name:</label>
+      <Input id="new-artist-name" @value={{@props.name}} />
+      <label for="image-url">Artist photo URL:</label>
+      <Input id="image-url" @value={{@props.imageUrl}} />
+    </div>
+  {{/if}}
+</fieldset>
+
