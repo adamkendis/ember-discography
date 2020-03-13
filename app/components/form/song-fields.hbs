@@ -1,1 +1,23 @@
-{{yield}}
+<fieldset>
+  <legend>Song:</legend>
+  <div class="song-input">
+    <label for="song-title">New song title:</label>
+    <Input id="song-title" @value={{@props.title}} />
+    <label for="song-mins">Length:</label>
+    <Input 
+      @type="number" 
+      id="song-mins" 
+      @value={{@props.minutes}} 
+      placeholder="MM"
+      min={{0}}
+    />
+    <Input 
+      @type="number" 
+      id="song-secs" 
+      @value={{@props.seconds}} 
+      placeholder="ss"
+      min={{0}}
+      max={{59}} 
+    />
+  </div>
+</fieldset>
