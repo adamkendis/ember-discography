@@ -16,9 +16,10 @@ export default function() {
     this.get('/albums');
     this.get('/albums/:id');
     this.get('/songs');
-    this.post('/songs/new');
+    this.post('/songs/');
     this.put('/songs/:id');
     this.del('/songs/:id');
     this.del('/albums/:id');
+    this.get('/new');
 
 }
