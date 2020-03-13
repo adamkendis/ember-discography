@@ -12,4 +12,5 @@ Router.map(function() {
   });
   this.route('songs');
   this.route('albums');
+  this.route('new');
 });
