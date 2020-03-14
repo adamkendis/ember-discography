@@ -18,7 +18,7 @@ module('Integration | Component | form/album-fields', function(hooks) {
 
     await render(hbs`<Form::AlbumFields @albums={{albums}} @handleChange={{handleChange}}/>`);
 
-    // Includes two always-present options: "Select artist", "New Artist"
+    // Includes two always-present options: "Select album", "New Album"
     assert.dom('option').exists({ count: 9 });
   });
 });

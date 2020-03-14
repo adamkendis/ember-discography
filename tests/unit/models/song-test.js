@@ -5,7 +5,6 @@ import { get } from '@ember/object'
 module('Unit | Model | song', function(hooks) {
   setupTest(hooks);
 
-  // Replace this with your real tests.
   test('song should have relationship with artist', function(assert) {
     const Song = this.owner.lookup('service:store').modelFor('song');
     const relationship = get(Song, 'relationshipsByName').get('artist');

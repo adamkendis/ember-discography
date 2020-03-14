@@ -9,6 +9,7 @@ module('Integration | Component | artist', function(hooks) {
   setupMirage(hooks);
 
   test('it renders an artist', async function(assert) {
+    assert.expect(3);
     let serverArtist = this.server.create('artist', 'withTwoAlbums', { name: 'John Doe' });
     let store = this.owner.lookup('service:store');
     let artist = await store.findRecord('artist', serverArtist.id);
@@ -22,6 +23,7 @@ module('Integration | Component | artist', function(hooks) {
   });
 
   test('it displays albums on albums-count click', async function(assert) {
+    assert.expect(3)
     let serverArtist = this.server.create('artist', 'withRandomAlbums');
     let store = this.owner.lookup('service:store');
     let artist = await store.findRecord('artist', serverArtist.id);
