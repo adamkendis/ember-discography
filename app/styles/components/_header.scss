@@ -1,0 +1,33 @@
+header {
+
+  $header-height: 75px;
+  height: $header-height;
+  padding-bottom: 3%;
+
+  .nav-index {
+    padding-right: 100px;
+  }
+  
+  nav {
+    height: $header-height;
+    position: fixed;
+    background-color: #2B2B52;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+  }
+
+  li {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  * {
+    text-decoration: none;
+    color: white;
+    display: inline;
+  }
+}

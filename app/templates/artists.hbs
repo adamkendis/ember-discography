@@ -1,0 +1,6 @@
+<div class="artists-container">
+  {{#each @model as |artist|}}
+    <Artist @artist={{artist}} />
+  {{/each}}
+  {{outlet}}
+</div>

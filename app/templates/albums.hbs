@@ -1,0 +1,7 @@
+<div class="albums-container">
+  {{#each @model as |album|}}
+    <h4>{{album.title}}</h4>
+    <h4>{{album.releaseDate}}</h4>
+  {{/each}}
+  {{outlet}}
+</div>

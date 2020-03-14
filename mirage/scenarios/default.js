@@ -1,9 +1,5 @@
-export default function(/* server */) {
+import faker from 'faker';
 
-  /*
-    Seed your development database using your factories.
-    This data will not be loaded in your tests.
-  */
-
-  // server.createList('post', 10);
+export default function(server) {
+  server.createList('artist', faker.random.number({min: 3, max: 7}), 'withRandomAlbums');
 }

@@ -1,0 +1,23 @@
+.form-container {
+  width: 350px;
+  margin: auto;
+  background-color: white;
+  padding: 25px;
+  border-radius: 3px;
+  box-shadow: $shadow-style;
+
+  fieldset {
+    border: $border-style;
+  }
+
+  // .form {
+  //   width: 100%;
+  // }
+
+  input, select {
+    width: 100%;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+}
+

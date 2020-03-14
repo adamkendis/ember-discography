@@ -1,0 +1,25 @@
+<Form @errors={{this.errors}}>
+  {{#if (eq this.currentStep "artist")}}
+    <Form::ArtistFields 
+      @artists={{@model.artists}}
+      @handleChange={{this.selectArtist}}
+      @props={{this.artistProps}}
+    />
+  {{else if (eq this.currentStep "album")}}
+    <Form::AlbumFields 
+      @albums={{this.albumSet}}
+      @handleChange={{this.selectAlbum}}
+      @props={{this.albumProps}}
+    />
+  {{else if (eq this.currentStep "song")}}
+    <Form::SongFields @props={{this.songProps}} />
+  {{/if}}
+  <button type="button" {{on "click" this.stepForm}}>
+    {{#if (eq this.currentStep "song")}}
+      Save song
+    {{else}}
+      Save and proceed to {{if (eq this.currentStep "artist") "albums" "songs"}}
+    {{/if}}
+  </button>
+  <button type="button" {{on "click" this.cancel}}>Cancel</button>
+</Form>
