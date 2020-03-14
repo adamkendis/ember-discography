@@ -1,6 +1,5 @@
 <fieldset>
   <legend>Album:</legend>
-  <label>Title:</label>
   <select class="select-album" {{on "change" @handleChange}}>
     <option value="" disabled selected>Select album</option>
     <option value="new">New Album</option>
@@ -10,9 +9,9 @@
   </select>
   {{#if (eq @props.id "new")}}
     <div class="new-album-input">
-      <label for="new-album-title">New album title:</label>
+      <label for="new-album-title">New album title*</label>
       <Input id="new-album-title" @value={{@props.title}} />
-      <label for="release-date">Album release date:</label>
+      <label for="release-date">Album release date*</label>
       <Input @type="date" id="release-date" @value={{@props.releaseDate}} />
     </div>
   {{/if}}
