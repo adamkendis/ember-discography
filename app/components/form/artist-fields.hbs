@@ -1,7 +1,7 @@
 <fieldset>
   <legend>Artist:</legend>
   <label>Name:</label>
-  <select class="select-artist" {{on "change" @handleChange}}>
+  <select class="select-artist" {{on "change" @handleChange}} required>
     <option value="" disabled selected>Select artist</option>
     <option value="new">New Artist</option>
     {{#each @artists as |artist|}}
@@ -10,9 +10,9 @@
   </select>
   {{#if (eq @props.id "new")}}
     <div class="new-artist-input">
-      <label for="new-artist-name">New artist name:</label>
-      <Input id="new-artist-name" @value={{@props.name}} />
-      <label for="image-url">Artist photo URL:</label>
+      <label for="new-artist-name">Name:</label>
+      <Input id="new-artist-name" @value={{@props.name}} required />
+      <label for="image-url">Image URL:</label>
       <Input id="image-url" @value={{@props.imageUrl}} />
     </div>
   {{/if}}
