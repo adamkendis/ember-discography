@@ -5,7 +5,8 @@ import { action } from '@ember/object';
 export default class ArtistComponent extends Component {
   @tracked isHidden = true;
 
-  @action toggleHidden() {
+  @action
+  toggleHidden() {
     this.isHidden = !this.isHidden;
   }
 }

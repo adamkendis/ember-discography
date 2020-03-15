@@ -5,6 +5,6 @@ export default class AlbumsRoute extends Route {
   @service store;
 
   async model() {
-    return this.store.findAll('album', { include: 'songs' });
+    return this.store.findAll('album', { include: 'artist,songs' });
   }
 }

@@ -9,6 +9,8 @@ export default class NewController extends Controller {
   // Albums only relating to selected artist
   @tracked albumSet;
   @tracked errors;
+  @tracked artist;
+  @tracked album;
 
   errorStates = {
     // Triggered if user steps form without selecting artist or album.
@@ -107,7 +109,7 @@ export default class NewController extends Controller {
             newArtist
               .save()
               .then(artist => {
-              this.artist = artist })
+                this.artist = artist })
               .catch(err => {
                 alert(err.message);
               });
@@ -137,11 +139,13 @@ export default class NewController extends Controller {
           this.currentStep = 'song';
           break;
         case 'song': {
+          let { seconds, minutes } = this.songProps;
+          seconds = seconds < 60 ? `0${seconds}` : seconds;
           let newSong = this.store.createRecord('song', {
             artist: this.artist,
             album: this.album,
             title: this.songProps.title,
-            length: parseInt(this.songProps.minutes * 60) + parseInt(this.songProps.seconds),
+            length: `${minutes}:${seconds}`,
           })
           newSong
             .save()
@@ -151,6 +155,7 @@ export default class NewController extends Controller {
             .catch(err => {
               alert(err.message)
             });
+          break;
         }
       }
     }

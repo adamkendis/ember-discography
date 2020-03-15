@@ -1,8 +1,8 @@
 import Model, { attr, belongsTo, hasMany} from '@ember-data/model';
 
 export default class AlbumModel extends Model {
-  @attr title;
+  @attr('string') title;
   @attr releaseDate;
-  @belongsTo('artist') artist;
+  @belongsTo('artist', { async: true }) artist;
   @hasMany('song') songs;
 }
