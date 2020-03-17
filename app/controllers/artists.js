@@ -28,7 +28,7 @@ export default class ArtistController extends Controller {
   }
 
   @action
-  update(id, name, image) {
+  update(id, { name, image }) {
     this.store.findRecord('artist', id)
       .then(artist => {
         artist.name = name;

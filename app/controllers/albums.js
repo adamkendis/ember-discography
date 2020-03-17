@@ -17,10 +17,11 @@ export default class AlbumsController extends Controller {
   }
 
   @action
-  update(id, title) {
+  update(id, title, releaseDate) {
     this.store.findRecord('album', id)
       .then(album => {
         album.title = title;
+        album.releaseDate = releaseDate;
         album.save() })
       .catch(err => {
         alert(err);
