@@ -6,7 +6,7 @@
 
   input {
     width: 80%;
-    margin-left: 0%;
+    margin-left: 10%;
   }
 }
 
@@ -27,6 +27,8 @@
     img {
       vertical-align: middle;
       border-radius: 3px;
+      width: 128px;
+      height: 128px;
     }
   }
 
@@ -35,12 +37,12 @@
     background-color: #e1e3e6;
     border-top-right-radius: 3px;
     padding-left: 5%;
-    height: 100px;
+    height: 105px;
   }
 
   .albums-count {
     cursor: pointer;
-    grid-column: 2 / 4;
+    grid-column: 3 / 4;
     padding-left: 5%;
     height: 20px;
   }
@@ -64,4 +66,39 @@
   padding-top: 5px;
   padding-bottom: 5px;
   border-bottom: $border-style;
+}
+
+textarea, input {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.artist-buttons {
+  text-align: left;
+
+  button {
+    color: white;
+    border-radius: 3px;
+    height: 22px;
+    padding: 0 3px 0 3px;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    opacity: 0.7;
+    font-weight: bolder;
+  }
+
+  .edit {
+    background-color: #3980e3;
+  }
+  
+  .delete {
+    background-color: #f4511e;
+  }
+
+  .save {
+    background-color: #00ad17;
+  }
 }
