@@ -7,7 +7,13 @@ export default class AlbumsController extends Controller {
   delete(e) {
     let id = e.target.value;
     let album = this.store.peekRecord('album', id);
+    let songs = album.hasMany('songs').value().toArray();
     album.destroyRecord()
+      .then(() => {
+        songs.forEach((song) => {
+          this.store.unloadRecord(song);
+        });
+      });
   }
 
   @action
