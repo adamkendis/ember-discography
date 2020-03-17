@@ -1,9 +1,9 @@
 <fieldset>
   <legend>Song:</legend>
   <div class="song-input">
-    <label for="song-title">New song title:</label>
+    <label for="song-title">New song title*</label>
     <Input id="song-title" @value={{@props.title}} />
-    <label for="song-mins">Length:</label>
+    <label for="song-mins">Length*</label>
     <Input 
       @type="number" 
       id="song-mins" 
@@ -21,3 +21,11 @@
     />
   </div>
 </fieldset>
+<div class="new-selections">
+  <span>
+    Artist: {{@artist.name}}
+  </span>
+  <span>
+    Album: {{@album.title}}
+  </span>
+</div>

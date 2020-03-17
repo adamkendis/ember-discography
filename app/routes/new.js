@@ -38,5 +38,8 @@ export default class ArtistsRoute extends Route {
     controller.set('albumProps', new AlbumProps());
     controller.set('songProps', new SongProps());
     controller.set('currentStep', 'artist');
+    controller.set('albumSet', undefined);
+    controller.set('artist', undefined);
+    controller.set('album', undefined);
   }
 }

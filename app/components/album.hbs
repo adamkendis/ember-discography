@@ -1,0 +1,59 @@
+<li class="album">
+  <div class="album-title">
+    {{#if this.editing}}
+      <Textarea 
+        class="new-title" 
+        @value={{this.newTitle}}
+        placeholder={{@album.title}}
+        minlength="1"
+      />
+      <Input @type="date" class="release-date" @value={{this.newDate}} />
+    {{else}}
+      <span class="title">{{@album.title}}</span>
+      <span class="release-date">Released: {{@album.releaseDate}}</span>
+    {{/if}}
+  </div>
+  <div class="expand" {{on "click" this.toggleSongs}}>
+    <span class="artist-name">{{@album.artist.name}}</span>
+    <span class="song-count">{{@album.songs.length}} songs</span>
+    <span class="dropdown-icon">{{if this.showSongs "∧" "∨"}}</span>
+  </div>
+  <div class="album-buttons">
+    <button 
+      type="button" 
+      class="edit" 
+      {{ on "click" this.toggleEditing }}
+    >
+      {{ if this.editing "Cancel" "Edit" }}
+    </button>
+    <button 
+      type="button" 
+      class="delete" 
+      value={{@album.id}} 
+      {{ on "click" @delete }}
+    >
+      Delete
+    </button>
+    {{#if this.editing }}
+      <button 
+        type="button" 
+        class="save" 
+        {{ on "click" this.updateAlbum }}
+      >
+        Save
+      </button>
+    {{/if}}
+  </div>
+</li>
+<table class="album-songs {{unless this.showSongs "hidden"}}">
+  <tr>
+    <th align="left">Song Title</th>
+    <th class="song-length">Length</th>
+  </tr>
+  {{#each @album.songs as |song|}}
+    <tr class="album-song">
+      <td class="song-title">{{song.title}}</td>
+      <td class="song-length">{{song.length}}</td>
+    </tr>
+  {{/each}}
+</table>

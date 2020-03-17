@@ -1,7 +1,13 @@
 .artists-container {
-  width: 30%;
+  width: 40%;
   min-width: 550px;
-  margin-left: 5%;
+  margin-left: 30%;
+  text-align: center;
+
+  input {
+    width: 80%;
+    margin-left: 10%;
+  }
 }
 
 .artist {
@@ -21,22 +27,22 @@
     img {
       vertical-align: middle;
       border-radius: 3px;
+      width: 128px;
+      height: 128px;
     }
   }
 
   .artist-name {
     grid-column: 2 / 4;
-    grid-row: 1 / 2;
     background-color: #e1e3e6;
     border-top-right-radius: 3px;
     padding-left: 5%;
-    height: 100px;
+    height: 105px;
   }
 
   .albums-count {
     cursor: pointer;
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
+    grid-column: 3 / 4;
     padding-left: 5%;
     height: 20px;
   }
@@ -46,18 +52,53 @@
     margin-right: 25px;
   }
 
-  .albums {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
-    padding-left: 3%;
-    border-top: $border-style;
-    padding-top: 10px;
+}
+
+.albums {
+  grid-column: 1 / 4;
+  padding-left: 3%;
+  border-top: $border-style;
+  padding-top: 10px;
+}
+
+.album {
+  min-height: 45px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: $border-style;
+}
+
+textarea, input {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.artist-buttons {
+  text-align: left;
+
+  button {
+    color: white;
+    border-radius: 3px;
+    height: 22px;
+    padding: 0 3px 0 3px;
+    transition: 0.3s;
   }
 
-  .album {
-    min-height: 45px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-bottom: $border-style;
+  button:hover {
+    opacity: 0.7;
+    font-weight: bolder;
+  }
+
+  .edit {
+    background-color: #3980e3;
+  }
+  
+  .delete {
+    background-color: #f4511e;
+  }
+
+  .save {
+    background-color: #00ad17;
   }
 }

@@ -8,7 +8,7 @@ module('Integration | Component | form/artist-fields', function(hooks) {
   setupRenderingTest(hooks);
   setupMirage(hooks);
 
-  test('it renders', async function(assert) {
+  test('it renders all artists as options', async function(assert) {
     this.server.createList('artist', 5);
     const dummyEventHandler = () => {};
     let store = this.owner.lookup('service:store');
