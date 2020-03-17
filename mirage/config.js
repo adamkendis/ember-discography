@@ -12,6 +12,22 @@ export default function() {
 
     
     this.resource('artists');
-    this.resource('albums');
     this.resource('songs'); 
+    this.resource('albums');
+
+    // Delete album's songs on album delete to prevent orphaned records.
+    this.del('/albums/:id', ({ albums }, request) => {
+      let id = request.params.id;
+      let album = albums.find(id);
+      album.songs.destroy();
+      album.destroy();
+    });
+
+    // Delete artist's albums and songs on artist delete.
+    this.del('/artists/:id', ({ artists }, request) => {
+      let id = request.params.id;
+      let artist = artists.find(id);
+      artist.albums.destroy();
+      artist.songs.destroy();
+    })
 }
