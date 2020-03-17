@@ -19,12 +19,12 @@
       @album={{this.album}}
     />
   {{/if}}
-  <button type="button" {{on "click" this.stepForm}}>
+  <button class="new-save" type="button" {{on "click" this.stepForm}}>
     {{#if (eq this.currentStep "song")}}
       Save song
     {{else}}
       Save and proceed to {{if (eq this.currentStep "artist") "albums" "songs"}}
     {{/if}}
   </button>
-  <button type="button" {{on "click" this.cancel}}>Cancel</button>
+  <button class="new-cancel" type="button" {{on "click" this.cancel}}>Cancel</button>
 </Form>
