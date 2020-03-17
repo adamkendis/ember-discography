@@ -14,7 +14,7 @@
         placeholder={{@artist.name}}
         minlength="1"
       />
-      Image URL: <Input @type="url" id="image-url" @value={{this.newImage}} />
+      Image URL: <Input @type="url" class="image-url" @value={{this.newImage}} />
     {{else}}
       <h1 class="name">{{@artist.name}}</h1>
     {{/if}}

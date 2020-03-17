@@ -7,7 +7,7 @@
         placeholder={{@album.title}}
         minlength="1"
       />
-      <Input @type="date" id="release-date" @value={{this.newDate}} />
+      <Input @type="date" class="release-date" @value={{this.newDate}} />
     {{else}}
       <span class="title">{{@album.title}}</span>
       <span class="release-date">Released: {{@album.releaseDate}}</span>

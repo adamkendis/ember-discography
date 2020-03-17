@@ -17,7 +17,7 @@ export default class FilterComponent extends Component {
         let normalized;
         if (typeof resource[filterKey]  === 'string') {
           normalized = resource[filterKey].toLowerCase();
-          return normalized.includes(query);
+          return normalized.includes(query.toLowerCase());
         } 
       })
     }

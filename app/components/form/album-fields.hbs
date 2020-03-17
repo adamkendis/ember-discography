@@ -2,7 +2,7 @@
   <legend>Album:</legend>
   <select class="select-album" {{on "change" @handleChange}}>
     <option value="" disabled selected>Select album</option>
-    <option value="new">New Album</option>
+    <option id="new-album" value="new">New Album</option>
     {{#each @albums as |album|}}
       <option value={{album.id}}>{{album.title}}</option>
     {{/each}}
