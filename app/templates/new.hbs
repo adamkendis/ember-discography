@@ -8,11 +8,16 @@
   {{else if (eq this.currentStep "album")}}
     <Form::AlbumFields 
       @albums={{this.albumSet}}
+      @artist={{this.artist}}
       @handleChange={{this.selectAlbum}}
       @props={{this.albumProps}}
     />
   {{else if (eq this.currentStep "song")}}
-    <Form::SongFields @props={{this.songProps}} />
+    <Form::SongFields 
+      @props={{this.songProps}} 
+      @artist={{this.artist}}
+      @album={{this.album}}
+    />
   {{/if}}
   <button type="button" {{on "click" this.stepForm}}>
     {{#if (eq this.currentStep "song")}}

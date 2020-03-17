@@ -7,8 +7,44 @@
     {{/if}}
   </div>
   <div class="artist-name">
-    <h1>{{@artist.name}}</h1>
+    {{#if this.editing}}
+      Name: <Textarea 
+        class="new-name" 
+        @value={{this.newName}}
+        placeholder={{@artist.name}}
+        minlength="1"
+      />
+      Image URL: <Input @type="url" id="image-url" @value={{this.newImage}} />
+    {{else}}
+      <h1 class="name">{{@artist.name}}</h1>
+    {{/if}}
   </div>
+  <span class="artist-buttons">
+    <button 
+      type="button" 
+      class="edit" 
+      {{ on "click" this.toggleEditing }}
+    >
+      {{ if this.editing "Cancel" "Edit" }}
+    </button>
+    <button 
+      type="button" 
+      class="delete" 
+      value={{@artist.id}} 
+      {{ on "click" @delete }}
+    >
+      Delete
+    </button>
+    {{#if this.editing }}
+      <button 
+        type="button" 
+        class="save" 
+        {{ on "click" this.updateArtist }}
+      >
+        Save
+      </button>
+    {{/if}}
+  </span>
   <div class="albums-count" {{on "click" this.toggleHidden}}>
     <span class="count">Albums saved: {{@artist.albums.length}}</span>
     <span class="dropdown-icon">{{if this.isHidden "∨" "∧"}}</span>

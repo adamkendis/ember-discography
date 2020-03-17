@@ -2,7 +2,11 @@
   <h1>Artists</h1>
   <Filter @resources={{@model}} @filterKey="name" as |results|>
     {{#each results as |artist|}}
-      <Artist @artist={{artist}} />
+      <Artist 
+        @artist={{artist}} 
+        @delete={{this.deleteArtist}}
+        @update={{this.update}}
+      />
     {{/each}}
   </Filter>
 </div>

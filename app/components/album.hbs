@@ -7,8 +7,10 @@
         placeholder={{@album.title}}
         minlength="1"
       />
+      <Input @type="date" id="release-date" @value={{this.newDate}} />
     {{else}}
       <span class="title">{{@album.title}}</span>
+      <span class="release-date">Released: {{@album.releaseDate}}</span>
     {{/if}}
   </div>
   <div class="expand" {{on "click" this.toggleSongs}}>
@@ -36,7 +38,7 @@
       <button 
         type="button" 
         class="save" 
-        {{ on "click" this.updateTitle }}
+        {{ on "click" this.updateAlbum }}
       >
         Save
       </button>
