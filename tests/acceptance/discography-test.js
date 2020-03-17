@@ -22,7 +22,5 @@ module('Acceptance | discography', function(hooks) {
     await click('.nav-albums');
     assert.equal(currentURL(), '/albums');
 
-    await click('.nav-songs');
-    assert.equal(currentURL(), '/songs');
   });
 });

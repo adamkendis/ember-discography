@@ -10,6 +10,6 @@ module('Integration | Component | header', function(hooks) {
     assert.expect(1);
     await render(hbs`<Header />`);
 
-    assert.dom('a').exists({ count: 5 });
+    assert.dom('a').exists({ count: 4 });
   });
 });
