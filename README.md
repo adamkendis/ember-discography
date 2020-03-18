@@ -2,6 +2,9 @@
 
 A discography CRUD web application written in Ember/Javascript. Store musical artists, albums, and songs.
 
+## Reference
+See the [wiki](https://github.com/adamkendis/ember-discography/wiki) for API reference.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
