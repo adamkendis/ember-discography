@@ -26,6 +26,8 @@ You will need the following things properly installed on your computer.
     # Start development server
       ember serve
       
+The back-end is a Mirage mock server. The mock database is seeded with random artists/albums/songs on first page visit. Navigating the app via the Header links will operate on the same data set. Refreshing the page (via browser refresh button or cmd+r) will create a new mock dataset. 
+      
 ## Using the app
 
 With the development server running, point your browser to http://localhost:4200/
